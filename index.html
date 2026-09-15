@@ -7,6 +7,13 @@
 
   <title>XR Lab Closed</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800&family=Roboto:wght@400;500;700;900&display=swap"
+    rel="stylesheet"
+  >
+
   <style>
     * {
       box-sizing: border-box;
@@ -21,7 +28,7 @@
       overflow: hidden;
       background: #111111;
       color: #ffffff;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: "IBM Plex Sans", "Roboto", Arial, sans-serif;
     }
 
     body {
@@ -41,8 +48,10 @@
       display: inline-block;
       margin-bottom: 30px;
       padding: 10px 22px;
+
       border: 2px solid #FF5555;
       border-radius: 999px;
+
       color: #FF5555;
       font-size: clamp(18px, 2.5vw, 28px);
       font-weight: 700;
@@ -51,11 +60,13 @@
     }
 
     h1 {
+      margin-bottom: 30px;
+
+      font-family: "IBM Plex Sans", "Roboto", Arial, sans-serif;
       font-size: clamp(70px, 12vw, 160px);
       line-height: 0.9;
       font-weight: 800;
       letter-spacing: -0.04em;
-      margin-bottom: 30px;
     }
 
     h1 .xr {
@@ -66,34 +77,70 @@
       color: #FF5555;
     }
 
-    .message {
-      font-size: clamp(26px, 4vw, 48px);
-      line-height: 1.35;
-      margin-bottom: 45px;
-      color: #dddddd;
-    }
-
-    .hours {
-      font-size: clamp(24px, 3vw, 38px);
-      line-height: 1.5;
-      margin-bottom: 35px;
-    }
-
-    .hours strong {
-      color: #ffffff;
-    }
-
-    .footer {
-      font-size: clamp(18px, 2.2vw, 28px);
-      color: #999999;
-    }
-
     .accent-line {
       width: min(260px, 45%);
       height: 6px;
       margin: 0 auto 35px;
+
       background: #FF5555;
       border-radius: 999px;
+    }
+
+    .message {
+      margin-bottom: 38px;
+
+      color: #cccccc;
+      font-size: clamp(22px, 3vw, 36px);
+      font-weight: 400;
+      line-height: 1.35;
+    }
+
+    .hours-table {
+      width: min(650px, 92%);
+      margin: 0 auto;
+      padding-top: 18px;
+
+      border-top: 2px solid #2a2a2a;
+    }
+
+    .hours-heading {
+      margin-bottom: 14px;
+
+      color: #8BE9FD;
+      font-size: clamp(18px, 2vw, 24px);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hours-table table {
+      width: 100%;
+      border-collapse: collapse;
+
+      font-size: clamp(22px, 2.6vw, 32px);
+    }
+
+    .hours-table td {
+      padding: 14px 18px;
+      border-bottom: 1px solid #262626;
+    }
+
+    .hours-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .hours-table td:first-child {
+      text-align: left;
+
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .hours-table td:last-child {
+      text-align: right;
+
+      color: #8BE9FD;
+      font-weight: 600;
     }
 
     @media (orientation: portrait) {
@@ -104,13 +151,57 @@
       h1 {
         font-size: clamp(64px, 16vw, 140px);
       }
+
+      .hours-table {
+        width: min(650px, 96%);
+      }
+
+      .hours-table td {
+        padding: 12px 10px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hours-table table {
+        font-size: clamp(18px, 5vw, 26px);
+      }
+
+      .hours-table td {
+        padding: 12px 8px;
+      }
+    }
+
+    @media (max-height: 700px) {
+      .screen {
+        padding-top: 30px;
+        padding-bottom: 30px;
+      }
+
+      .status {
+        margin-bottom: 20px;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+      }
+
+      .accent-line {
+        margin-bottom: 25px;
+      }
+
+      .message {
+        margin-bottom: 28px;
+      }
     }
   </style>
 </head>
 
 <body>
   <main class="screen">
-    <div class="status">Currently Closed</div>
+
+    <div class="status">
+      Currently Closed
+    </div>
 
     <h1>
       <span class="xr">XR LAB</span><br />
@@ -120,18 +211,34 @@
     <div class="accent-line"></div>
 
     <p class="message">
-      The XR Lab is currently closed.
+      Please return during regular lab hours.
     </p>
 
-    <div class="hours">
-      <strong>Regular Lab Hours</strong><br />
-      Tuesday – Thursday<br />
-      9:00 AM – 4:00 PM
+    <div class="hours-table">
+      <div class="hours-heading">
+        Regular Lab Hours
+      </div>
+
+      <table>
+        <tbody>
+          <tr>
+            <td>Tuesday</td>
+            <td>9:00 AM – 4:00 PM</td>
+          </tr>
+
+          <tr>
+            <td>Wednesday</td>
+            <td>9:00 AM – 4:00 PM</td>
+          </tr>
+
+          <tr>
+            <td>Thursday</td>
+            <td>9:00 AM – 4:00 PM</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
-    <p class="footer">
-      Room E251 • East Hall
-    </p>
   </main>
 </body>
 </html>
